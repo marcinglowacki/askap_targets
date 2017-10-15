@@ -1,0 +1,430 @@
+/* ========================================================================= */
+/*                                                                           */
+/* CORNISH Home Page CSS style file                                          */
+/*                                                                           */
+/* LAST MODIFIED: 05-Mar-2013 by C. Purcell                                  */
+/*                                                                           */
+/* ========================================================================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+    background: grey;
+    background-image: url("decoration/bg-page.jpg");
+}
+
+#container {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#header {
+    width: 980px;
+    height: 98px;
+    margin: 0 auto;
+    background: black url("decoration/bg-header.jpg") no-repeat left top;
+}
+
+#page {
+    float:right;
+    width: 980px;
+    margin: 0 auto;
+    padding: 0px 0px 0px 0px;
+    position: relative;
+    background: white;
+}
+
+#page hr {
+    border: 0px;
+    color: grey;
+    background-color: grey;
+    background: black url(decoration/bg-page.jpg);
+    height: 30px;
+    width: 100%;
+}
+
+#p2 {
+    font-size: 4px;
+}
+
+
+/* ---------------------------- Logo area ---------------------------------- */
+
+#logoarea {
+    float: left;
+    width: 500px;
+    height: 98px;
+    margin: 0 auto;
+    padding-left: 100px;
+}
+
+#logoarea h1 {
+    margin: 0px;
+    line-height: normal;
+    font-weight: normal;
+    padding-top: 20px;
+    font-size: 28px;
+    border-bottom: 0;
+    color: #FFFFFF;
+}
+
+#logoarea p {
+    margin: 0px;
+    line-height: normal;
+    font-weight: normal;
+    margin-top: -4px;
+    font-size: 13px;
+    color: #FFFFFF;
+}
+
+#logoarea a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ----------------------------- Tab area ---------------------------------- */
+
+#tabarea {
+    float: right;
+    width: 370px;
+    height: 98px;	
+}
+
+#tabnav
+{
+    float: right;
+    margin: 0;
+    height: 25px;
+    padding-right: 10px;
+    padding-top: 73px;
+}
+
+#tabnav li
+{
+    margin: 0; padding: 0;
+    display: inline;
+    list-style-type: none;
+}
+
+#tabnav a:link, #tabnav a:visited
+{
+    float: left;
+    background: #c0c0c0 url("decoration/tab_bottom_shad.png") repeat-x bottom;
+    font-size: 12px;
+    line-height: 19px;
+    font-weight: bold;
+    padding: 2px 15px 2px 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+}
+
+#tabnav a:link.active, #tabnav a:visited.active
+{
+    border-bottom: 2px solid #fff;
+    background: #fff;
+    color: #000;
+}
+
+#tabnav a:hover
+{
+    background: #d8d8d8 url("decoration/tab_bottom_shad.png") repeat-x bottom;
+    color: black
+}
+
+/* ------------------------- Navigation Sidepanel -------------------------- */
+
+#sidebar {
+    float: left;
+    width: 140px;
+    overflow: hidden;
+    display: inline;
+    margin: 0;
+}
+
+#sidebar h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 0px 2px 0px 0px;
+    padding: 7px 0 7px 31px; 
+    background: #404040 url(decoration/menu.gif) no-repeat 8px 6px;
+}
+
+#sidebar h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 7px 0 7px 31px; 
+    background: #404040 url(decoration/menu.gif) no-repeat 8px 6px;
+    margin: 20px 2px 0px 0px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    margin: 2px 2px 0px 0px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#sidebar ul li{
+    padding-bottom: 2px;
+}
+
+#sidebar ul li a{
+    font: normal 12px Arial;
+    color: black;
+    display: block;
+    padding: 5px 0;
+    line-height: 17px;
+    text-decoration: none;
+    padding-left: 30px;
+    background: #D8D8D8 url(decoration/arrow.gif) no-repeat 8px 5px;
+}
+
+#sidebar ul li a:visited{
+    color: black;
+}
+
+#sidebar ul li a:hover{ /*hover state CSS*/
+    color: white;
+    background: #707070 url(decoration/arrow_neg.gif) no-repeat 8px 5px;
+}
+
+#sidebar .current a {
+    color: white;
+    background: #707070 url(decoration/arrow_neg.gif) no-repeat 8px 5px;
+}
+
+
+#sidebar .sub a {
+    padding-left: 30px;
+    background: #D8D8D8 url(decoration/arrow.gif) no-repeat 8px 5px;
+}
+
+#sidebar .currentsub a {
+    color: white;
+    padding-left: 30px;
+    background: #707070 url(decoration/arrow_neg.gif) no-repeat 8px 5px;
+}
+
+#sidebar .sub a:hover{
+    background: #707070 url(decoration/arrow_neg.gif) no-repeat 8px 5px;
+}
+
+#sidebar .currentsub a:hover{
+    background: #707070 url(decoration/arrow_neg.gif) no-repeat 8px 5px;
+}
+
+#sidebar img {
+    border: 0;
+    text-align:center; 
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+/* --------------------------- Content pane -------------------------------- */
+
+#content {
+    float:right;
+    width: 820px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right:10px;
+    background: white;
+}
+
+#content p{
+    line-height:1.4;
+    margin:5px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#content p1{
+    font-size: 0.95em;
+    line-height:1.4;
+    margin:5px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+
+#content a{
+    color: #9d2704;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#content h1 {
+    text-align: center;    
+    font-size: 20px;
+    border-bottom: 0px;
+}
+
+#content h2 {
+    font-size: 16px;
+    margin:15px 0px 5px; 
+    border-bottom: 2px solid #888;
+}
+
+#content h3{
+    font-size: 15px;
+    margin:5px 0px 5px; 
+    text-decoration: underline;
+}
+
+#content h4{
+    font-size: 15px;
+    margin:5px 0px 5px;
+}
+
+#content h5{
+    font-size: 14px;
+    margin: 5px 0px 5px;
+    border-bottom: 2px solid #888;
+    margin-right: 600px;
+}
+
+#content img{
+    border: 0;
+}
+
+#content ul {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#content hr {
+    border: 0px;
+    color: solid #888;
+    background-color: #888;
+    background: #888;
+    height: 2px;
+    width: 100%;
+}
+
+#content pre {
+    text-align: left;
+    font-size: 11px;
+    padding: 5px;
+    margin: 5px;
+    background: #f0f0f0;
+    border: 1px solid black;
+    line-height: 10px;
+    width: 800px;
+    overflow: auto; 
+    overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
+}
+
+/* ------------------- Figure, image and table formatting ------------------- */
+
+div.imagebox {
+    border:2px solid grey;
+    text-align:center; 
+    padding:0px;
+}
+
+div.polaroidbox {
+    clear:both;
+    width:100%;
+    border:2px solid black;
+    text-align:left;
+    margin:1px;	
+    padding:1px	;
+}
+
+div.figurebox {
+    border:0px solid black;
+    text-align:center; 
+    padding:7px;
+    margin:auto
+}
+
+div.figureboxborder {
+    border:1px solid black;
+    text-align:center; 
+    padding:7px;
+    margin:auto;
+    background:#bff8d2;
+}
+
+div.captionbox {
+    border:0px solid black;
+    text-align:left;	
+    padding:2px;
+    width:100%
+    margin:auto;
+}
+
+div.captionboxborder {
+    border: 1px solid black;
+    text-align:left;
+    padding:2px;
+    width:100%
+    margin:auto;
+}
+
+table.fancy {
+	border-width: 2px 2px 2px 2px;
+	border-spacing: 5px;
+	border-style: solid;
+	border-color: black;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+table.fancy th {
+	border-width: 1px 1px 1px 1px;
+	padding: 5px 5px 5px 5px;
+	border-style: dashed;
+	border-color: gray gray gray gray;
+	background-color: #DEDEDE;
+}
+
+table.fancy td {
+	border-width: 1px 1px 1px 1px;
+	padding: 5px 5px 5px 5px;
+	border-style: dashed;
+	border-color: gray;
+}	
+
+/* ------------------------------------------------------------------------- */
+
+#footer { 
+    float:left;
+    width: 980px;
+    height: 70px;
+    padding: 0px 0px 5px 0px;
+    background: black url("decoration/bg-footer.jpg") no-repeat left top;
+}
+
+#footer p, #footer a{
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+#foottextarea {
+    float: left;
+    width: 700px;
+    height: 65px;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 10pt;
+}
+
+
+#footlogoarea {
+    float: right;
+    width: 200px;
+    height: 65px;
+    margin: 0 auto;
+    padding: 5px;
+}

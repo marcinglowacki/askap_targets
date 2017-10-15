@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>NVSS & SUMSS Radio Sources</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<script type="text/javascript" src="highlight.js"></script>
+<link rel="stylesheet" href="style.css" type="text/css">
+
+<body>
+
+<div id="container">
+
+<!--Header here-->
+
+<div id="header">
+<div id="logoarea">
+<p></br><h1>ASKAP Target Selection</h1></p>
+</div><!-- end logoarea -->
+</div><!-- end header -->
+<div id="page">
+<div id="content">
+
+<h2>The NVSS & SUMSS Catalogues</h2>
+</br>
+<p>Here you can browse a joined database of NVSS and SUMSS radio sources and investigate objects
+that may be suitable for ASKAP commissioning/early science surveys. These have been
+matched by position, with a match determined to exist for sources within 
+a 10 arcsecond radius. AT20G data has also been included, as well as a 
+link to the corresponding position search on NED for each object when queried.</p>
+<p>Compiled by Marcin Glowacki, with much help from Dr. Cormac Purcell.</p>
+<h2>Position search</h2>
+<p>Input a range of positions for right ascension and declination, to return
+objects found within that region. Default in degrees; hh:mm:ss and +dd:mm:ss format is also possible.
+You can also input a minimum flux density limit in NVSS, SUMSS or AT20G.</p>
+<form action="http://www.physics.usyd.edu.au/cgi-bin/askap_targets/cat_query.py" method="get">
+  <p>Minimum RA: <input type="text" name="ra_min" size="5" value="0">
+  Maximum RA: <input type="text" name="ra_max" size="5" value="10"></p>
+  <p>Minimum DEC: <input type="text" name="dec_min" size="5" value="-40">
+  Maximum DEC: <input type="text" name="dec_max" size="5" value="-30"></p>
+<input type="checkbox" name="strong">Strong sources only? 
+(More than <input type="text" name="sValue" size="1" value="0.2"> Jy).
+<input name="title" type="hidden" value="Pos_Range">
+<input name="type" type="hidden" value="HTML"></br>
+<input type="submit" value="Search">
+</form></br>
+<p>Alternatively, you may search for objects within a radius of 
+a specific RA and DEC. Input a RA and DEC in degrees or hms/dms, and a search radius in 
+arcminutes. You can also input a minimum flux density limit in NVSS, SUMSS or AT20G.</p>
+<form action="http://www.physics.usyd.edu.au/cgi-bin/askap_targets/cat_query.py" method="get">
+  RA: <input type="text" name="ra" size="5" value="0.08"></br>
+  DEC: <input type="text" name="dec" size="5" value="-32.34"></br>
+  Search radius: <input type="text" name="rad" size="3" value="5"> arcminutes.</br>
+<input type="checkbox" name="strong">Strong sources only? 
+(More than <input type="text" name="sValue" size="1" value="0.2"> Jy).
+<input name="title" type="hidden" value="Pos_Search">
+<input name="type" type="hidden" value="HTML"></br>
+<input type="submit" value="Search">
+</form>
+</br>
+
+
+<h2>Preset queries</h2>
+</br>
+
+<a name="Strong"></a>
+<table class="fancy" style="text-align:center;width:90%;margin-left:auto; margin-right:auto;">
+  <tbody>
+    <tr>
+      <th colspan=4 style="text-align: left">Strong Sources</th>
+    </tr>
+    <tr>
+      <th style="width: 80px">Link</th>
+      <th>Description</th>
+      <!--<th style="width: 80px">Format</th>-->
+      <!--<th style="width: 80px">Include</br>Artefacts?</th>-->
+    </tr>
+    <tr>
+      <form method="get"
+	    action="http://www.physics.usyd.edu.au/cgi-bin/askap_targets/cat_query.py"
+	    target="_blank">
+	<td>
+	  <input type="submit" value="View"></br>
+	  <input name="title" type="hidden" value="strong">
+	  <input name="type" type="hidden" value="HTML">
+	</td>
+	<td style="text-align: left">
+	  <h3>Only Strong Sources</h3>
+	   <p>Displays objects with flux densities 
+	      greater than a minimum flux limit (default = 200 mJy)
+	     in any of the NVSS, SUMSS or AT20G source catalogues.</p>
+	   Sort by: <select name="sort">
+	    <option value="ra_new" selected>RA</option>
+	    <option value="dec_new">DEC</option>
+	    <option value="N_St">NVSS Flux</option>
+	    <option value="tot_flux_dens">SUMSS Flux</option>
+	  </select></br>
+	   Minimum flux limit: <input type="text" name="sValue" size="1" value="0.2"> Jy.</br>
+	   <input type="checkbox" name="poslim"> Restrict position? 
+	   Declinations < <input type="text" name="decmax" size="3" value="0"> degrees.
+	</td>
+	<!--<td style="text-align: left;">
+	  <input type="radio" name="type" value="HTML" checked>HTML</br>
+	  <input type="checkbox" name="errs" value="1">Errors?</br>
+	  <input type="radio" name="type" value="ASCII">ASCII</br>
+	  <input type="radio" name="type" value="CSV">CSV</br>
+	</td>
+	<td style="text-align: left;">
+	  <input type="radio" name="artifacts" value="0" checked>No</br>
+	  <input type="radio" name="artifacts" value="1">Yes</br>
+	</td>-->
+      </form>      
+    </tr>
+</br>
+    <tr>
+      <form method="get"
+	    action="http://www.physics.usyd.edu.au/cgi-bin/askap_targets/cat_query.py"
+	    target="_blank">
+	<td>
+	  <input type="submit" value="View"></br>
+	  <input name="title" type="hidden" value="Strongest">
+	  <input name="type" type="hidden" value="HTML">
+	</td>
+	<td style="text-align: left">
+	  <h3>Rank by Flux</h3>
+	  <p>Display the strongest flux in either 
+	    NVSS or SUMSS, given the number of sources wanted to be examine
+	    from strongest to weakest.
+	    Minimum flux is 200 mJy.</p>
+	  Rank by: 
+	  <input type="radio" name="order" value="NVSS" checked>NVSS 
+	  <input type="radio" name="order" value="SUMSS">SUMSS</br> 
+	  Number of sources: <input type="text" name="num" value="200" size="4"></br>
+	  <input type="checkbox" name="strong">Strong sources only? 
+	  (More than <input type="text" name="sValue" size="1" value="0.2"> Jy).</br>
+	   <input type="checkbox" name="poslim"> Restrict position? 
+	   Declinations < <input type="text" name="decmax" size="3" value="0"> degrees.</br>
+	</td>
+      </form>
+    </tr>
+    <tr>
+      <form method="get"
+	    action="http://www.physics.usyd.edu.au/cgi-bin/askap_targets/cat_query.py"
+	    target="_blank">
+	<td>
+	  <input type="submit" value="View"></br>
+	  <input name="title" type="hidden" value="Calibrator">
+	  <input name="type" type="hidden" value="HTML">
+	</td>
+	<td style="text-align: left">
+	  <h3>Objects within ATCA Calibrator Catalogue</h3>
+	  <p>Display objects within NVSS and/or SUMSS that has a corresponding
+	    component within the ATCA Calibrator Catalogue.
+	    Matches were made beforehand on position in RA and DEC.
+	    A link to the corresponding ATCA object on the 
+	    <a href="http://www.narrabri.atnf.csiro.au/calibrators/" 
+	       target="_blank">ATNF website</a> is also provided.</p></br>
+	  <input type="checkbox" name="strong">Strong sources only? 
+	  (More than <input type="text" name="sValue" size="1" value="0.2"> Jy).</br>
+	   <input type="checkbox" name="poslim"> Restrict position? 
+	   Declinations < <input type="text" name="decmax" size="3" value="0"> degrees.</br>
+	  Sort by: <select name="sort">
+	    <option value="ra_new_Cal" selected>RA</option>
+	    <option value="dec_new_Cal">DEC</option>
+	    <option value="N_St">NVSS Flux</option>
+	    <option value="tot_flux_dens">SUMSS Flux</option>
+	    <option value="C_name">Calibrator Name</option>
+	  </select></br>
+	
+	</td>
+      </form>
+    </tr>
+    <tr>
+      <form method="get"
+	    action="http://www.physics.usyd.edu.au/cgi-bin/askap_targets/cat_query.py"
+	    target="_blank">
+	<td>
+	  <input type="submit" value="View"></br>
+	  <input name="title" type="hidden" value="Compact">
+	  <input name="type" type="hidden" value="HTML">
+	</td>
+	<td style="text-align: left">
+	  <h3>Compact sources (|Alpha| < 0.5)</h3>
+	  <p>Display sources within NVSS that were also found in
+	    at least two other sources and had a SED fitted and found
+	    to have a spectral index, alpha, of between -0.5 and 0.5. 
+	    Such sources may be compact. 
+	    You can view the SEDs used in a pdf file, 
+	    and restrict the results based on 
+	    reduced chi-square value for the fit (maximum of 70)
+	    , and whether it was flagged
+	    as a good fit by eye or not (default is for good fits only; 
+	    if including bad fits please inspect the SED file).</br>
+	    Credit to Joe Callingham for generating the SEDs.</p>
+	  Max Reduced Chi-square value:
+	  <input type="text" name="redchi" size="5" value="70"></br>
+	  <input type="checkbox" name="suspect">Include suspect fits?
+	  <input type="checkbox" name="strong">Strong sources only? 
+	  (More than <input type="text" name="sValue" size="1" value="0.2"> Jy).</br>
+	  <input type="checkbox" name="poslim"> Restrict position? 
+	  Declinations < <input type="text" name="decmax" size="3" value="0"> degrees.</br>
+	  Sort by: <select name="sort">
+	    <option value="alpha" selected>alpha</option>
+	    <option value="ra_new_Com">RA</option>
+	    <option value="dec_new_Com">DEC</option>
+	    <option value="N_St">NVSS Flux</option>
+	    <option value="tot_flux_dens">SUMSS Flux</option>
+	  </select></br>
+	</td>
+      </form>
+    </tr>
+    <tr>
+      <form method="get"
+	    action="http://www.physics.usyd.edu.au/cgi-bin/askap_targets/cat_query.py"
+	    target="_blank">
+	<td>
+	  <input type="submit" value="View"></br>
+	  <input name="title" type="hidden" value="BERSCat">
+	  <input name="type" type="hidden" value="HTML">
+	</td>
+	<td style="text-align: left">
+	  <h3>Objects within the Bright Extra-galactic Radio Source Catalogue</h3>
+	  <p>Display objects within NVSS and/or SUMSS that has a corresponding
+	    component within the Bright Extra-galactic Radio Source (BERS) catalogue (Kuhr et al., 1981).
+	    Each object in this catalogue was found to have a total flux density minimum of 1 Jy.
+	    Matches were made beforehand on position in RA and DEC.
+	    The class of object and its spectral index (alpha) determined by BERS is included. 
+	    A link to the flux readings for each BERS object will also be provided soon.</p>
+	  <input type="checkbox" name="strong">Strong sources only? 
+	  (More than <input type="text" name="sValue" size="1" value="0.2"> Jy).</br>
+	  <input type="checkbox" name="poslim"> Restrict position? 
+	  Declinations < <input type="text" name="decmax" size="3" value="0"> degrees.</br>
+	  Sort by: <select name="sort">
+	    <option value="alpha" selected>alpha</option>
+	    <option value="ra_new_B">RA</option>
+	    <option value="dec_new_B">DEC</option>
+	    <option value="N_St">NVSS Flux</option>
+	    <option value="tot_flux_dens">SUMSS Flux</option>
+	    <option value="Source_Name_1Jy">BERS Object Name</option>
+	    <option value="z">redshift</option>
+	  </select></br>
+	</td>
+      </form>
+    </tr>
+    <tr>
+      <form method="get"
+	    action="http://www.physics.usyd.edu.au/cgi-bin/askap_targets/cat_query.py"
+	    target="_blank">
+	<td>
+	  <input type="submit" value="View"></br>
+	  <input name="title" type="hidden" value="WP85">
+	  <input name="type" type="hidden" value="HTML">
+	</td>
+	<td style="text-align: left">
+	  <h3>Objects within the Wall & Peacock 2-Jy Radio Catalogue</h3>
+	  <p>Display objects within NVSS and/or SUMSS that has a corresponding
+	    component within the Wall & Peacock 2-Jy (1985) Radio CatalogueBright Extra-galactic Radio Source 
+	    (WP85) catalogue.
+	    Each object in this catalogue was found to have a total flux density minimum of 2 Jy.
+	    Matches were made beforehand on position in RA and DEC.
+	    The class of object, redshift and its spectral index (alpha) determined by WP85 is included.</p>
+	  <input type="checkbox" name="strong">Strong sources only? 
+	  (More than <input type="text" name="sValue" size="1" value="0.2"> Jy).</br>
+	   <input type="checkbox" name="poslim"> Restrict position? 
+	   Declinations < <input type="text" name="decmax" size="3" value="0"> degrees.</br>
+	  Sort by: <select name="sort">
+	    <option value="Sp_Index" selected>alpha</option>
+	    <option value="ra_new_WP">RA</option>
+	    <option value="dec_new_WP">DEC</option>
+	    <option value="N_St">NVSS Flux</option>
+	    <option value="tot_flux_dens">SUMSS Flux</option>
+	    <option value="IAUname">WP85 Object Name</option>
+	    <option value="z">redshift</option>
+	  </select></br>
+	</td>
+      </form>
+    </tr>
+  </tbody>
+</table>
+</br>
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9930177;
+var sc_invisible=1;
+var sc_security="b06b31d6";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web analytics"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/9930177/0/b06b31d6/1/" alt="web
+analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
